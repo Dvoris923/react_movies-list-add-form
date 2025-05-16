@@ -13,7 +13,7 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
   const [imgUrl, setImgUrl] = useState('');
   const [imdbUrl, setImdbUrl] = useState('');
   const [imdbId, setImdbId] = useState('');
-  const disabled = !title || !imdbUrl || !imgUrl || !imdbId;
+  const disabled = !title || !imdbUrl || !imgUrl || !imdbId || !description;
 
   const reset = () => {
     setTitle('');
@@ -56,6 +56,7 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
         label="Description"
         value={description}
         onChange={setDescription}
+        required
       />
 
       <TextField
